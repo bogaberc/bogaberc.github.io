@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regisztráció</title>
+
+    <link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="/">Koo regisztráció</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Vissza<span
+                            class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="continer">
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4">
+                <h2>Regisztráció</h2>
+                <div class="alert alert-info alert-dismissible fade show" role="alert">
+                    <strong>Tisztelt Földmérő!</strong>
+                    A geodéziai munka bejelentését csak olyan földmérő végezheti el, aki legalább
+                    érvényes földmérő igazolvánnyal rendelkezik.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+ 
+		<form id="regisztracioUrlap">
+		    <div class="form-group">
+                        <label for="vallakozasNev">A bejelentő vállalkozás/vállakozó neve:</label>
+			<span class="csillagIndex"> *</span>
+                        <input id="vallakozasNev" type="text" name="vallakozasNev" class="form-control" required>
+			<small id="vallakozasNevUzenet" class="form-text">A *-al jelölt mezőket kötelező
+                            kitölteni!</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="vallakozasCim">A bejelentő vállalkozás/vállakozó címe:</label>
+			<span class="csillagIndex"> *</span>
+                        <input id="vallakozasCim" type="text" name="vallakozasCim" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="foldmeroNev">A bejelentést végző földmérő neve:</label>
+			<span class="csillagIndex"> *</span>
+                        <input id="foldmeroNev" type="text" name="foldmeroNev" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="foldmeroIgSzam">A bejelentést végző érvényes földmérő igazolványának száma:</label>
+			<span class="csillagIndex"> *</span>
+                        <input id="foldmeroIgSzam" type="text" name="foldmeroIgSzam" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="foldmeroIRM">A bejelentést végző érvényes ingatlanrendező minősítésének száma:</label>
+                        <input id="foldmeroIRM" type="text" name="foldmeroIRM" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="foldmeroEmail">A bejelentő Email címe:</label>
+			<span class="csillagIndex"> *</span>
+                        <input id="foldmeroEmail" type="email" name="foldmeroEmail" class="form-control" aria-describedby="emailHelp" required>
+                        <small id="emailHelp" class="form-text text-muted">Adja meg az email címét, ahová a visszaigazolás küldését kéri.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="foldmeroPassword">Jelszó:</label>
+			<span class="csillagIndex"> *</span>
+                        <input id="foldmeroPassword" type="password" name="foldmeroPassword" class="form-control" required>
+			<small id="emailHelp" class="form-text text-muted">Adja meg a későbbi bejelentkezéséhez a jelszót.</small>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Regisztráció</button>
+                </form>
+            </div>
+            <div class="col-4"></div>
+        </div>
+    </div>
+
+    <script src="js/cont.js"></script>
+
+</body>
+
+</html>

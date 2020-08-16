@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Koo.bejelentés</title>
+
+    <link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="index.html">Koo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="about.html">Bejelentésről</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="contact.html">Regisztráció</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="login.html">Bejelentkezés</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+		<button class="btn btn-success mr-sm-2" type="submit">Felhasználók</button>
+                <button class="btn btn-success my-2 my-sm-0" type="submit">Koo munkák</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="continer">
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+                <h1>Földmérési és térképészeti munkák bejelentése</h1>
+                <div class="alert alert-info alert-dismissible fade show" role="alert">
+                    <strong>Tisztelt Földmérő!</strong>
+                    A geodéziai munka bejelentéséhez - az egyszeri regisztrációt követően - először jelentkezzen be,
+                    majd
+                    figyelmesen töltse ki az űrlapot és kattintson a bejelentés elküldése gombra.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="kooUrlap" action="">
+                    <div class="form-group">
+                        <label for="bejelentoNyilvszama" class="">a bejelentő nyilvántartási száma:</label>
+                        <span class="csillagIndex"> *</span>
+                        <input id="bejelentoNyilvszama" type="text" name="bejelentoNyilvszama" class="form-control"
+                            required>
+                        <small id="bejelentoNyilvszama" class="form-text">A *-al jelölt mezőket kötelező
+                            kitölteni!</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="bejelentoNeveCime" class="">1. A bejelentő földmérő neve és címe:</label>
+                        <span class="csillagIndex"> *</span>
+                        <input id="bejelentoNeveCime" type="text" name="bejelentoNeveCime" class="form-control"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fmIgSzam" class="">2. Földmérő igazolvány száma:</label>
+                        <span class="csillagIndex"> *</span>
+                        <input id="fmIgSzam" type="text" name="fmIgSzam" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="megbizoNeveCime" class="">3. A megbízó neve és címe:</label>
+                        <span class="csillagIndex"> *</span>
+                        <input id="megbizoNeveCime" type="text" name="megbizoNeveCime" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telepulesNeve" class="">4. A munkával érintett település neve:</label>
+                        <span class="csillagIndex"> *</span>
+                        <input id="telepulesNeve" type="text" name="telepulesNeve" class="form-control" required>
+                        <small id="telepulesNeve" class="form-text text-muted">Csak egy település név adható
+                            meg!</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="hrsz" class="">5. A munkával érintett helyrajzi számok:</label>
+                        <span class="csillagIndex"> *</span>
+                        <input id="hrsz" type="text" name="hrsz" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="felmTer" class="">6. A felmérendő terület nagysága:</label>
+                        <span class="csillagIndex"> *</span>
+                        <input id="felmTer" type="text" name="felmTer" class="form-control" required>
+                        <small id="felmTer" class="form-text text-muted">A terület nagyságát hektárban kérem
+                            megadni!</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="munkaTipus" class="">7. A munka típusa:</label>
+                        <span class="csillagIndex"> *</span>
+                        <select id="munkaTipus" name="munkaTipus" class="form-control"></select>
+                        <small id="munkaTipus" class="form-text text-muted">Kérem válasszon!</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="munkaFormatum" class="">8. A készítendő térképi adatállomány formátuma:</label>
+                        <span class="csillagIndex"> *</span>
+                        <select id="munkaFormatum" name="munkaFormatum" class="form-control"></select>
+                        <small id="munkaFormatum" class="form-text text-muted">Kérem válasszon a listából!</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="alapSzintk" class="">9. Szintvonalas magassági ábrázolás esetén az alapszintköz ...
+                            m:</label>
+                        <input id="alapSzintk" type="text" name="alapSzintk" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="munkaKezd" class="">10. A munka megkezdésének időpontja:</label>
+                        <span class="csillagIndex"> *</span>
+                        <input id="munkaKezd" type="date" name="munkaKezd" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="munkaBefejez" class="">11. A munka befejezésének várható időpontja:</label>
+                        <span class="csillagIndex"> *</span>
+                        <input id="munkaBefejez" type="date" name="munkaBefejez" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="egyeb" class="">12. Egyéb megjegyzések, a munka leírása:</label>
+                        <textarea name="egyeb" id="egyeb" rows="5" class="form-control"></textarea>
+                    </div>
+		    <div class="form-group">
+			<label for="vazlatFile" class="">13. A munkaterület vázlata:</label>
+		        <div class="custom-file">
+                            <input id="vazlatFile" type="file" class="custom-file-input" required>
+                            <label class="custom-file-label" for="vazlatFile">Állomány</label>
+                            <small id="vazlatFile" class="form-text text-muted">Kérem válassza ki a munkaterület vázlatát tartalmazó pdf állományt!</small>
+                 	</div>
+		    </div>
+                    <button type="submit" class="btn btn-primary">Bejelentés elküldése</button>
+                </form>
+            </div>
+            <div class="col-3"></div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
